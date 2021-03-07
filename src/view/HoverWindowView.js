@@ -1,6 +1,6 @@
 import DOM from '../common/DOM.js';
 import CommonEventDispatcher from '../common/CommonEventDispatcher.js';
-import StateModel from './StateModel.js';
+import BooleanStateModel from '../model/BooleanStateModel.js';
 
 
 export default class HoverWindowView {
@@ -12,7 +12,7 @@ export default class HoverWindowView {
     #$contents;
 
     constructor(eventName, handleSelector, contentsSelector) {
-        this.#stateModel = new StateModel(eventName, false);
+        this.#stateModel = new BooleanStateModel(eventName, false);
         this.#eventName = eventName;
         this.#$handle = DOM.query(handleSelector);
         this.#$contents = DOM.query(contentsSelector);
@@ -38,6 +38,6 @@ export default class HoverWindowView {
     }
 
     #render() {
-        DOM.display(this.#$contents, this.#stateModel.getStateValue());
+        DOM.display(this.#$contents, this.#stateModel.getValue());
     }
 }

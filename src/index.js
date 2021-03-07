@@ -4,13 +4,12 @@ import debounce from './common/Debounce.js';
 import DOM from './common/DOM.js';
 import InputCheck from './common/InputCheck.js';
 
-import ExplanationsModel from './components/ExplanationsModel.js';
-import ExplanationsView from './components/ExplanationsView.js';
-import HeaderView from './components/HeaderView.js';
-import HoverWindowView from './components/HoverWindowView.js';
-import StateModel from './components/StateModel.js';
-import ToggleableContentsModel from './components/ToggleableContentsModel.js';
-import ToggleableContentsView from './components/ToggleableContentsView.js';
+import BooleanStateModel from './model/BooleanStateModel.js';
+
+import ExplanationsView from './view/ExplanationsView.js';
+import HeaderView from './view/HeaderView.js';
+import HoverWindowView from './view/HoverWindowView.js';
+import ToggleableContentsView from './view/ToggleableContentsView.js';
 
 
 export {
@@ -20,12 +19,10 @@ export {
     DOM,
     InputCheck,
 
-    ExplanationsModel,
     ExplanationsView,
     HeaderView,
     HoverWindowView,
-    StateModel,
-    ToggleableContentsModel,
+    BooleanStateModel,
     ToggleableContentsView
 };
 

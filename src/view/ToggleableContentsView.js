@@ -38,7 +38,7 @@ export default class ToggleableContentsView {
     }
 
     render() {
-        if (this.#toggleableModel.isOpen()) {
+        if (this.#toggleableModel.getValue()) {
             this.#$toggle.textContent = `${this.#contentsName}を閉じる`;
             DOM.block(this.#$contents);
         } else {
