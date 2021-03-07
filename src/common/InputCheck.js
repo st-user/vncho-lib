@@ -1,32 +1,28 @@
-const checkIfInputValueEmpty = errorMsg => {
-    return inputValue => !inputValue ? errorMsg : '';
-};
+export default class InputCheck {
+    
+    static checkAll(inputValue, checkers) {
+        let error = '';
+        checkers.forEach(ch => error = error || ch(inputValue));
+        return error;
+    }
 
-const checkIfInputValueMatchesRegExp = (regExp, errorMsg, invert) => {
-    return inputValue => {
-        let result;
-        if (!invert) {
-            result = regExp.test(inputValue);
-        } else {
-            result = !regExp.test(inputValue);
-        }
-        return result ? errorMsg : '';
-    };
-};
+    static checkIfInputValueEmpty(errorMsg) {
+        return inputValue => !inputValue ? errorMsg : '';
+    }
 
-const checkAll = (inputValue, checkers) => {
-    let error = '';
-    checkers.forEach(ch => error = error || ch(inputValue));
-    return error;
-};
+    static checkIfInputValueMatchesRegExp(regExp, errorMsg, invert) {
+        return inputValue => {
+            let result;
+            if (!invert) {
+                result = regExp.test(inputValue);
+            } else {
+                result = !regExp.test(inputValue);
+            }
+            return result ? errorMsg : '';
+        };
+    }
 
-const checkIfIntegerGreaterEqual = (value, errorMsg) => {
-    return inputValue => value <= parseInt(inputValue, 10) ? '' : errorMsg;
-};
-
-export default {
-    checkIfInputValueEmpty,
-    checkIfInputValueMatchesRegExp,
-    checkIfIntegerGreaterEqual,
-    checkAll
-};
+    static checkIfIntegerGreaterEqual(value, errorMsg) {
+        return inputValue => value <= parseInt(inputValue, 10) ? '' : errorMsg;
+    }
+}

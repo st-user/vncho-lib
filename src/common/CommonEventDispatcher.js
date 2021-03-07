@@ -1,23 +1,18 @@
-const CommonEventDispatcher = (() => {
 
-    const $mainOvserver = document.createElement('div');
+const $mainOvserver = document.createElement('div');
+const toEventName = (name, context) => !context ? name : `${name}.${context}`;
 
-    const toEventName = (name, context) => !context ? name : `${name}.${context}`;
+export default class CommonEventDispatcher {
 
-    return {
+    static dispatch(_eventName, detail, context) {
+        const eventName = toEventName(_eventName, context);
+        $mainOvserver.dispatchEvent(new CustomEvent(eventName, {
+            detail: detail
+        }));
+    }
 
-        dispatch: (_eventName, detail, context) => {
-            const eventName = toEventName(_eventName, context);
-            $mainOvserver.dispatchEvent(new CustomEvent(eventName, {
-                detail: detail
-            }));
-        },
-
-        on(_eventName, handler, context) {
-            const eventName = toEventName(_eventName, context);
-            $mainOvserver.addEventListener(eventName, handler);
-        }
-    };
-})();
-
-export default CommonEventDispatcher;
+    static on(_eventName, handler, context) {
+        const eventName = toEventName(_eventName, context);
+        $mainOvserver.addEventListener(eventName, handler);
+    }
+}

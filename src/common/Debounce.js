@@ -1,4 +1,5 @@
-const debounce = (func, wait) => {
+export default function (func, wait) {
+
     let timeout;
 
     return function() {
@@ -10,6 +11,4 @@ const debounce = (func, wait) => {
         clearTimeout(timeout);
         timeout = setTimeout(execute, wait);
     };
-};
-
-export default debounce;
+}
