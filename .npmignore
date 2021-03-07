@@ -1,0 +1,8 @@
+node_modules/
+gscss/
+scss/
+.eslintrc.json
+.gitignore
+.stylelintrc.json
+babel.config.json
+package-lock.json

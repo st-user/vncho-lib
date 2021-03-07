@@ -1,0 +1,26 @@
+{
+  "name": "vncho-lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "private": false,
+  "scripts": {
+    "lint:js": "eslint 'src/**/*.js'",
+    "lint:css": "stylelint 'scss/**/*.scss'",
+    "build-css": "rm -Rf css && node-sass scss --output css --output-style compressed"
+  },
+  "author": "Tomoki Sato",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.12.7",
+    "@babel/eslint-parser": "^7.12.1",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-private-methods": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "eslint": "^7.15.0",
+    "node-sass": "^5.0.0",
+    "stylelint": "^13.8.0",
+    "stylelint-config-sass-guidelines": "^7.1.0",
+    "stylelint-no-unsupported-browser-features": "^4.1.4"
+  }
+}
