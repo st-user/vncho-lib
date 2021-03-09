@@ -37,12 +37,32 @@ export default class DOM {
         on(element, 'keyup', handler);
     }
 
+    static keydown(element, handler) {
+        on(element, 'keydown', handler);
+    }
+
     static dragover(element, handler) {
         on(element, 'dragover', handler);
     }
 
     static drop(element, handler) {
         on(element, 'drop', handler);
+    }
+
+    static mousedown(element, handler) {
+        on(element, 'mousedown', handler);
+    }
+
+    static mousemove(element, handler) {
+        on(element, 'mousemove', handler);
+    }
+
+    static mouseup(element, handler) {
+        on(element, 'mouseup', handler);
+    }
+
+    static contextmenu(element, handler) {
+        on(element, 'contextmenu', handler);
     }
 
     static windowKeyupIfNotPrevented(handler) {

@@ -20,6 +20,7 @@ export default class HoverWindowView {
 
     setUpEvents() {
         DOM.click(this.#$handle, event => {
+            event.preventDefault();
             event.stopPropagation();
             this.#stateModel.toggle();
         });
