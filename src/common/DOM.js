@@ -65,6 +65,10 @@ export default class DOM {
         on(element, 'contextmenu', handler);
     }
 
+    static dblclick(element, handler) {
+        on(element, 'dblclick', handler);
+    }
+
     static windowKeyupIfNotPrevented(handler) {
         window.addEventListener('keyup', event => {
             if (isWindowKeyupEventPrevented) {
